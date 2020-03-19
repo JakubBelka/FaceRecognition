@@ -122,4 +122,4 @@ history = model.fit_generator(generator=train_generator,
 
 
 
-model.save('MODELKURWAWPYTEDOMINIKA.model')
+model.save('MODEL.model')
