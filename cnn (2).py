@@ -38,67 +38,67 @@ validation_generator = datagen_validation.flow_from_directory(base_path + "valid
 nb_classes = 3
 
 model = Sequential()
-# 1 - Convolution
+# 
 model.add(Conv2D(512,(3,3), padding='same', input_shape=(100, 100,1)))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(Dropout(rate=0.25))
-# 2 Convolution layer
+#
 model.add(Conv2D(256,(3,3), padding='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(rate=0.25))
-# 3 Convolution layer
+# 
 model.add(Conv2D(256,(3,3), padding='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(Dropout(rate=0.25))
-# 4 Convolution layer
+# 4 
 model.add(Conv2D(128,(3,3), padding='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(Dropout(rate=0.25))
-# 5 Convolution layer
+# 5 
 model.add(Conv2D(128,(3,3), padding='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(rate=0.25))
-# 6 Convolution layer
+# 6 
 model.add(Conv2D(64,(3,3), padding='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(Dropout(rate=0.25))
-# 7 Convolution layer
+# 7 
 model.add(Conv2D(64,(3,3), padding='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(rate=0.25))
-# 8 Convolution layer
+# 8 
 model.add(Conv2D(32,(3,3), padding='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(Dropout(rate=0.25))
-#9 Convolution layer
+#9 
 model.add(Conv2D(32,(3,3), padding='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(Dropout(rate=0.25))
 # Flattening
 model.add(Flatten())
-# Fully connected layer 1st layer
+# 
 model.add(Dense(512))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(Dropout(rate=0.25))
-# Fully connected layer 1st layer
+# 
 model.add(Dense(64))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(Dropout(0.25))
-# Fully connected layer 1st layer
+# 
 model.add(Dense(nb_classes, activation='softmax'))
 
 opt = Adam(lr=0.0001)
